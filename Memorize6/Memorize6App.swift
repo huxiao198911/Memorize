@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Memorize6App: App {
+    @StateObject var themeStore = ThemeStore(named: "default")
+//    let game = MemorizeViewModel(theme: )
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ThemeChooser()
+                .environmentObject(themeStore)
         }
     }
 }
